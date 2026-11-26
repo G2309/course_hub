@@ -130,7 +130,7 @@ Bunny Stream es la opción presentada: mantiene 720p y 1080p nítidos, incluye e
 | 7. Panel, certificado y correos | 6–7 | 30 | Panel de administración, certificado en PDF y correos automáticos |
 | 8. Seguridad, pruebas y entrega | 7–8 | 24 | Respaldos, pruebas, 2 rondas de ajustes, publicación y capacitación |
 
-La suma de las 17 actividades es 180 horas en 8 semanas, con un promedio de 22.5 horas semanales. La semana 7 concentra 35 horas, así que se adelantarán de 6 a 8 horas de seguridad y pruebas a las semanas 4 a 6 sin cambiar el total.
+La suma de las 17 actividades es 180 horas en 8 semanas, con un promedio de 22.5 horas semanales. La semana 7 concentra 35 horas, así que se adelantarán de 6 a 8 horas de seguridad y pruebas a las semanas 4 a 6 sin cambiar el total. El desglose de actividades por branch está en `docs/06_roadmap.md`.
 
 Las horas alcanzan para el alcance descrito si el cliente entrega videos y preguntas antes de la semana 3, aprueba el diseño en la semana 2, define los precios antes de la semana 5 y da acceso a su cuenta de QPayPro Premium antes de la semana 5. No hay margen para cambios de alcance: cualquier demora o ajuste adicional se reprograma. Si se desea un colchón, se pueden sumar unas 27 horas, un 15%.
 
@@ -150,7 +150,8 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | Concepto | Valor |
 | --- | --- |
 | Horas de desarrollo | 180 horas |
-| Desarrollo | Q2,500 |
+| Desarrollo | Q2,520 |
+| Tarifa por hora | Q14/hora |
 | Mantenimiento | 20% de cada venta, aparte del hosting |
 | Mínimo mensual de mantenimiento | No aplica |
 | Hosting y dominio | Los paga el cliente; el desarrollador entrega y administra el hosting en Railway |
@@ -161,7 +162,6 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 
 | Tema | Condición |
 | --- | --- |
-| Forma de pago inicial | 50% al iniciar y 50% al entregar la plataforma |
 | Cálculo del mantenimiento | Sobre el monto cobrado al alumno |
 | Pago del mantenimiento | Mensual, los primeros 5 días de cada mes |
 | Horas incluidas en el mantenimiento | Hasta 5 horas mensuales para cambios, actualizaciones, soporte técnico, seguridad y respaldos |

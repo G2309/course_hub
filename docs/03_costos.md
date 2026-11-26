@@ -6,7 +6,7 @@ Precios consultados el 25 de noviembre de 2026. Montos en dólares salvo que dig
 
 | Concepto | Quién lo paga | Detalle |
 | --- | --- | --- |
-| Desarrollo | Doctor | Q2,500: 50% al iniciar y 50% al entregar |
+| Desarrollo | Doctor | Q2,520 |
 | Dominio | Doctor | Descartado el dominio de UVG. Se compra un `.com` en Cloudflare Registrar, alrededor de $8–11 al año (~Q62–85) |
 | Hosting en Railway | Doctor | El desarrollador entrega y administra el proyecto, pero la cuenta y el pago son del doctor |
 | QPayPro | Doctor | Plan Premium, Q195/mes, con comisión desde 3.5% + Q2.95 por transacción. La tarifa exacta depende del giro y se confirma en su cuenta |
