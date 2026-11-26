@@ -74,7 +74,61 @@
 | Resolución | 720p (1080p en lecciones con texto pequeño) |
 | Calidad adaptativa | Sí, se ajusta al internet de cada alumno |
 | Formato para grabar | MP4, H.264 |
-| Duración sugerida por video | 5 a 15 minutos |
+| Duración sugerida por video | 5 a 15 minutos en cursos cortos; hasta 1–2 horas en el curso de 5 horas |
+
+## Video: proveedor y costo estimado
+
+Se propone **Bunny Stream** para alojar las lecciones. La decisión se tomó comparando los servicios que permiten controlar el acceso a videos de pago.
+
+| Concepto | Bunny Stream | Cloudflare Stream | Mux |
+| --- | --- | --- | --- |
+| Codificación | Gratis | Gratis | Gratis en 1080p basic; Plus desde $0.03125/min |
+| Almacenamiento | Desde $0.01/GB al mes | $5/mes por bloque de 1,000 minutos | $0.003/min al mes |
+| Entrega | Desde $0.005/GB | $1 por cada 1,000 minutos | $0.001/min después de 100,000 min gratis al mes |
+| Mínimo o crédito | $1/mes | Bloque de $5/mes | $20 de crédito mensual en PAYG |
+| Seguridad incluida | Token, hotlink y marca de agua | URLs firmadas | URLs firmadas y restricción de dominio y referidor |
+| Página de precios | [bunny.net/pricing/stream](https://bunny.net/pricing/stream) | [developers.cloudflare.com/stream/pricing](https://developers.cloudflare.com/stream/pricing/) | [mux.com/pricing/video](https://www.mux.com/pricing/video) |
+
+Precios consultados el 25 de noviembre de 2026, en dólares.
+
+**Estimado para el curso más largo.** 5 horas (300 minutos) repartidas en 3 videos de 1 a 2 horas, H.264, 720p a ~4 Mbps y 1080p a ~8 Mbps, con ~10% de sobrecarga.
+
+| Resolución | Tamaño del curso | Almacenamiento Bunny | Entrega por alumno | 100 alumnos/mes | 500 alumnos/mes |
+| --- | --- | --- | --- | --- | --- |
+| 720p | ~10 GB | ~$0.10 | ~$0.05 | ~$5 | ~$25 |
+| 1080p | ~20 GB | ~$0.20 | ~$0.10 | ~$10 | ~$50 |
+
+Con la tarifa Standard de $0.01/GB, recomendable para Latinoamérica por su mayor cobertura, la entrega se duplica: ~$20/mes con 100 alumnos y ~$100/mes con 500 en 1080p. En cursos largos cada alumno ve entre 50% y 60% del video en promedio, así que el gasto real suele ser la mitad de esos valores. Cloudflare Stream cobraría $30 y $150 en los mismos casos; Mux regala 100,000 minutos de entrega al mes, pero no incluye marca de agua.
+
+Bunny Stream es la opción presentada: mantiene 720p y 1080p nítidos, incluye enlaces que vencen y marca de agua sin costo adicional, y deja un gasto estimado de ~$10/mes con 100 alumnos y ~$50/mes con 500 en 1080p, más el mínimo de $1. Las tarifas se revisan antes de contratar.
+
+## Plan de ejecución
+
+| Fase | Semanas | Horas | Entregable |
+| --- | --- | --- | --- |
+| 1. Análisis y configuración | 1 | 18 | Estructura de cursos y entornos listos en Railway y Cloudflare |
+| 2. Diseño de interfaz | 1–2 | 12 | Pantallas de celular y escritorio aprobadas |
+| 3. Base de datos y cuentas | 2–3 | 26 | Login, recuperación, roles y verificación en dos pasos |
+| 4. Catálogo y video | 3–4 | 24 | Cursos visibles y lecciones con video protegido |
+| 5. Cuestionarios y progreso | 4–5 | 26 | Calificación en el servidor, nota mínima y avance guardado |
+| 6. Pagos e inscripción | 5–6 | 20 | Cobro con QPayPro e inscripción manual |
+| 7. Panel, certificado y correos | 6–7 | 30 | Panel de administración, certificado en PDF y correos automáticos |
+| 8. Seguridad, pruebas y entrega | 7–8 | 24 | Respaldos, pruebas, 2 rondas de ajustes, publicación y capacitación |
+
+La suma de las 17 actividades es 180 horas en 8 semanas, con un promedio de 22.5 horas semanales. La semana 7 concentra 35 horas, así que se adelantarán de 6 a 8 horas de seguridad y pruebas a las semanas 4 a 6 sin cambiar el total.
+
+Las horas alcanzan para el alcance descrito si el cliente entrega videos y preguntas antes de la semana 3, aprueba el diseño en la semana 2, define los precios antes de la semana 5 y abre su cuenta de QPayPro antes de la semana 5. No hay margen para cambios de alcance: cualquier demora o ajuste adicional se reprograma. Si se desea un colchón, se pueden sumar unas 27 horas, un 15%.
+
+### Pasos para integrar el video
+
+1. Crear la cuenta y la biblioteca en Bunny Stream, con región Standard para Latinoamérica.
+2. Guardar las claves de acceso como variables de entorno en Railway, nunca en el repositorio.
+3. Subir los videos desde el panel o por API con TUS reanudable, indicado para archivos de 1 a 2 horas.
+4. Activar enlaces con token que vencen en pocas horas y la marca de agua con el correo del alumno.
+5. Revisar la inscripción en el servidor antes de entregar cada URL firmada.
+6. Integrar el reproductor con HLS adaptativo, 720p como calidad estándar y 1080p como límite.
+7. Probar enlace vencido, hotlink, marca de agua, reproducción en celular y reanudación de subida.
+8. Revisar el consumo de almacenamiento y entrega al cierre de cada mes.
 
 ## Inversión
 
