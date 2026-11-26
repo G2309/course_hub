@@ -12,7 +12,6 @@ Entregar la plataforma de cursos de Academia Vitaris con 180 horas de desarrollo
 | Tarifa sugerida | Q14/hora |
 | Total con esa tarifa | Q2,520 |
 | Total acordado en la propuesta | Q2,520 |
-| Tarifa implícita si se mantuviera Q2,500 | Q13.89/hora |
 
 Opción elegida: **Q14/hora, total Q2,520**. La propuesta ya registra ese monto.
 
