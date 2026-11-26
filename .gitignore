@@ -1,0 +1,35 @@
+# Node, Vite y Fastify
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+*.tsbuildinfo
+*.log
+logs/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Bases de datos y respaldos locales
+pgdata/
+.postgres/
+*.dump
+*.sql.gz
+
+# Railway
+.railway/
+
+# Sistema, editores y Nix
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+.direnv/
+result
+result-*
