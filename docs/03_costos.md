@@ -2,48 +2,54 @@
 
 Precios consultados el 25 de noviembre de 2026. Montos en dólares salvo que diga Q (quetzales). Tipo de cambio referencial: 1 USD ≈ Q7.75, a verificar al facturar.
 
-## Lo que se cobra
+## Modelo de cobro
 
-| Concepto | Monto |
+| Concepto | Quién lo paga | Detalle |
+| --- | --- | --- |
+| Desarrollo | Doctor | Q2,500: 50% al iniciar y 50% al entregar |
+| Dominio | Doctor, en su cuenta propia | Si usa el dominio que tiene en UVG no hay costo nuevo. Si compra uno, un `.com` en Cloudflare Registrar cuesta desde $7.85/año (~Q61/año) |
+| Hosting en Railway | Doctor | El desarrollador entrega y administra el proyecto en Railway, pero la cuenta y el pago son del doctor |
+| Mantenimiento | Doctor al desarrollador | 20% de cada venta, aparte del hosting. Incluye hasta **5 horas mensuales** para cambios, actualizaciones, soporte técnico, seguridad y respaldos. No incluye hosting ni dominio |
+| Video y correos | Incluidos en el mantenimiento | Bunny Stream con mínimo de $1/mes y Resend gratis hasta 3,000 correos/mes |
+| QPayPro | Doctor | Comisión por transacción, según el plan que tenga contratado |
+
+## Costo fijo mensual
+
+| Concepto | Costo mensual | En quetzales |
+| --- | --- | --- |
+| Dominio (si usa el actual de UVG) | $0 | Q0 |
+| Dominio `.com` nuevo, prorrateado | ~$0.65 | ~Q5 |
+| DNS, CDN, HTTPS y WAF en Cloudflare Free | $0 | Q0 |
+| Frontend en Cloudflare Pages | $0 | Q0 |
+| Hosting backend y PostgreSQL en Railway Hobby | $5–15 | Q39–116 |
+| Almacenamiento de video en Bunny Stream | $1 (mínimo del plan) | Q7.75 |
+| Correos en Resend | $0 hasta 3,000 correos | Q0 |
+| **Total fijo** | **$6–16** | **Q47–129** |
+
+El mínimo de $1 de Bunny cubre el almacenamiento de un curso de 5 horas en 1080p (~20 GB). El gasto que cambia con los alumnos es la entrega del video, no el almacenamiento.
+
+## Costo variable por alumno
+
+El curso se ve **una sola vez** cuando el alumno lo completa. No hay cargo mensual por alumno.
+
+| Concepto | Costo por alumno |
 | --- | --- |
-| Desarrollo | Q2,500. Según la propuesta: 50% al iniciar y 50% al entregar |
-| Mantenimiento | 20% de cada venta, sin mínimo mensual |
+| Entrega del video en Bunny, 1080p (~20 GB), tarifa Standard | Q1.55 (~$0.20). En tarifa Volume, Q0.78 (~$0.10) |
+| Comisión de QPayPro | Alrededor de 5.95% + Q2.95 por venta. Con un curso de Q500 son ~Q32.7 |
 
-El mantenimiento quedó fijado en 20% de cada venta. Gustavo se lo comunica directamente al doctor; no se pregunta en el cuestionario.
+Si el alumno ve solo entre 50% y 60% del video, el costo de entrega baja a la mitad.
 
-El mantenimiento cubre hosting, video, dominio, correos, respaldos, seguridad, actualizaciones, soporte técnico y hasta 2 horas de cambios pequeños al mes.
+## Estimados para el primer año
 
-## Costos de operación
+Supuestos: curso de 5 horas en 1080p, tarifa Standard de Bunny, dominio propio ya existente y Railway en el rango medio de $10/mes (~Q78). No se esperan 100 alumnos de golpe: esa es una meta optimista.
 
-| Servicio | Uso previsto | Costo estimado | Link |
-| --- | --- | --- | --- |
-| Dominio `.com` | Registro y renovación | Desde $7.85/año (~Q61/año, ~Q5/mes). Un `.com` estándar suele estar entre $8.57 y $11/año según el registrador | [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) |
-| DNS, CDN, HTTPS y WAF | Plan Free de Cloudflare | $0 | [Planes de Cloudflare](https://www.cloudflare.com/plans/network-cdn) |
-| Frontend | Cloudflare Pages, 500 builds/mes y hasta 20,000 archivos | $0 | [Límites de Pages](https://developers.cloudflare.com/pages/platform/limits/) |
-| Backend y PostgreSQL | Railway Hobby, siempre activo, $5 de uso incluidos | $5–15/mes (~Q39–116) | [Railway](https://railway.com/pricing) |
-| Video | Bunny Stream, curso de 5 horas en 1080p | ~$10/mes con 100 alumnos; ~$50/mes con 500; mínimo $1 | [Bunny Stream](https://bunny.net/pricing/stream) |
-| Correos | Resend Free, 3,000 correos/mes y 100/día | $0; Pro $20/mes si se supera | [Resend](https://resend.com/pricing) |
-| Certificados PDF | Generados en el servidor | $0 | — |
-| QPayPro | Lo paga el cliente; comisión por transacción | Plan Free Q0/mes, alrededor de 5.95% + Q2.95 por cobro según la página actual. Otra página oficial indica 5% + Q2.43; Premium Q195/mes desde 3.5% + Q2.95. Confirmar tarifa exacta | [QPayPro](https://www.qpaypro.com/gt/precios) |
+| Alumnos en el primer año | Fijo mensual | Video, pago único | Total de operación | QPayPro si el curso cuesta Q500 |
+| --- | --- | --- | --- | --- |
+| 1 | Q47–129 | Q1–2 | Q48–131 | Q32.7 |
+| 10 | Q47–129 | Q8–16 | Q55–145 | Q327 |
+| 30 | Q47–129 | Q23–47 | Q70–176 | Q981 |
 
-### Total estimado
-
-| Escenario | Costo mensual | Costo mensual en Q | Costo anual en Q |
-| --- | --- | --- | --- |
-| 100 alumnos en el primer año, 1080p | $15–25 | Q116–194 | Q1,400–2,300 |
-| 500 alumnos, 1080p | $55–70 | Q425–540 | Q5,100–6,500 |
-
-El rango alto de Railway se da si el backend y la base de datos pasan de los $5 de uso incluidos. El plan Pro de Railway cuesta $20/mes por workspace si se necesitan más límites o retención de logs de 30 días.
-
-## Railway: usar la cuenta actual o crear otra
-
-No hace falta pedirle al doctor que abra otra cuenta para empezar. Lo recomendable es crear un proyecto separado, por ejemplo `course-hub`, dentro de tu cuenta actual de Railway: así no pagas otro plan base y la facturación sigue consolidada. Si al entregar quiere todo a su nombre, se le traspasa el proyecto o se migran las variables a su cuenta.
-
-Crear una cuenta aparte solo tiene sentido si quieres separar cobros desde el primer día; implica otro plan Hobby de $5/mes y otra configuración de pagos.
-
-## Punto de equilibrio del mantenimiento
-
-Con el 20% acordado: si los costos son ~Q150/mes, necesitas vender ~Q750/mes para cubrirlos. Con un curso de Q500, son 2 ventas al mes. Con la proyección de 100 alumnos en el primer año, el plan es empezar poco a poco y cubrir la operación con las primeras ventas.
+Si se compra un `.com` nuevo, sumar ~Q5 al fijo mensual. El mantenimiento de 20% se calcula sobre las ventas y es aparte de estas cifras.
 
 ## Fuentes
 

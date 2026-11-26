@@ -136,12 +136,11 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | --- | --- |
 | Horas de desarrollo | 180 horas |
 | Desarrollo | Q2,500 |
-| Mantenimiento | 20% de cada venta |
+| Mantenimiento | 20% de cada venta, aparte del hosting |
 | Mínimo mensual de mantenimiento | No aplica |
-| Hosting, video, dominio y correos | Incluido en el mantenimiento |
-| Respaldos, seguridad y actualizaciones | Incluido en el mantenimiento |
-| Soporte y corrección de errores | Incluido en el mantenimiento |
-| Cambios pequeños al mes | Hasta 2 horas, incluidas en el mantenimiento |
+| Hosting y dominio | Los paga el cliente; el desarrollador entrega y administra el hosting en Railway |
+| Video y correos | Incluidos en el mantenimiento |
+| Cambios, actualizaciones, soporte técnico, seguridad y respaldos | Hasta 5 horas mensuales, incluidas en el mantenimiento |
 
 ## Condiciones
 
@@ -150,6 +149,7 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | Forma de pago inicial | 50% al iniciar y 50% al entregar la plataforma |
 | Cálculo del mantenimiento | Sobre el monto cobrado al alumno |
 | Pago del mantenimiento | Mensual, los primeros 5 días de cada mes |
+| Horas incluidas en el mantenimiento | Hasta 5 horas mensuales para cambios, actualizaciones, soporte técnico, seguridad y respaldos |
 | Mínimo mensual | No se cobra; el mantenimiento es el 20% de las ventas |
 | Duración mínima | 12 meses desde la entrega |
 | Terminación anticipada | Pago de Q6,000 |
@@ -170,7 +170,8 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | Cargo de QPayPro por transacción | Sí |  |
 | Emitir factura electrónica (FEL) por cada venta | Sí |  |
 | Desarrollar y publicar la plataforma |  | Sí |
-| Hosting, video, dominio y correos |  | Sí |
-| Mantenimiento, respaldos y seguridad |  | Sí |
+| Dominio en cuenta propia y pago del hosting en Railway | Sí |  |
+| Entrega y administración del hosting en Railway, video y correos |  | Sí |
+| Mantenimiento, respaldos y seguridad, hasta 5 h/mes |  | Sí |
 | Soporte técnico a alumnos |  | Sí |
 | Capacitación para usar el panel |  | Sí |
