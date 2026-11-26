@@ -7,10 +7,9 @@ Precios consultados el 25 de noviembre de 2026. Montos en dólares salvo que dig
 | Concepto | Monto |
 | --- | --- |
 | Desarrollo | Q2,500. Según la propuesta: 50% al iniciar y 50% al entregar |
-| Mantenimiento | 20% de cada venta de cursos, según indicación actual |
-| Mantenimiento en la propuesta consolidada | 15% de cada venta con mínimo de Q400/mes |
+| Mantenimiento | 20% de cada venta, sin mínimo mensual |
 
-Hay una diferencia entre el 20% que indicaste ahora y el 15% con mínimo Q400 que dice la propuesta. Este md registra ambos; hay que decidir cuál se presenta al doctor antes de consolidar.
+El mantenimiento quedó fijado en 20% de cada venta. Gustavo se lo comunica directamente al doctor; no se pregunta en el cuestionario.
 
 El mantenimiento cubre hosting, video, dominio, correos, respaldos, seguridad, actualizaciones, soporte técnico y hasta 2 horas de cambios pequeños al mes.
 
@@ -31,7 +30,7 @@ El mantenimiento cubre hosting, video, dominio, correos, respaldos, seguridad, a
 
 | Escenario | Costo mensual | Costo mensual en Q | Costo anual en Q |
 | --- | --- | --- | --- |
-| 100 alumnos, 1080p | $15–25 | Q116–194 | Q1,400–2,300 |
+| 100 alumnos en el primer año, 1080p | $15–25 | Q116–194 | Q1,400–2,300 |
 | 500 alumnos, 1080p | $55–70 | Q425–540 | Q5,100–6,500 |
 
 El rango alto de Railway se da si el backend y la base de datos pasan de los $5 de uso incluidos. El plan Pro de Railway cuesta $20/mes por workspace si se necesitan más límites o retención de logs de 30 días.
@@ -44,11 +43,7 @@ Crear una cuenta aparte solo tiene sentido si quieres separar cobros desde el pr
 
 ## Punto de equilibrio del mantenimiento
 
-Con el 20% que indicaste: si los costos son ~Q150/mes, necesitas vender ~Q750/mes para cubrirlos. Con un curso de Q500, son 2 ventas al mes.
-
-Con el 15% y mínimo Q400 de la propuesta: el mínimo Q400 cubre los costos desde el primer mes aunque no haya ventas. Es un esquema más seguro para ti, pero más caro para el doctor cuando vende poco.
-
-Esta diferencia conviene resolverla antes de convertir la propuesta a PDF.
+Con el 20% acordado: si los costos son ~Q150/mes, necesitas vender ~Q750/mes para cubrirlos. Con un curso de Q500, son 2 ventas al mes. Con la proyección de 100 alumnos en el primer año, el plan es empezar poco a poco y cubrir la operación con las primeras ventas.
 
 ## Fuentes
 

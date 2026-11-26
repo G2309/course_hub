@@ -136,8 +136,8 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | --- | --- |
 | Horas de desarrollo | 180 horas |
 | Desarrollo | Q2,500 |
-| Mantenimiento | 15% de cada venta |
-| Mínimo mensual de mantenimiento | Q400 |
+| Mantenimiento | 20% de cada venta |
+| Mínimo mensual de mantenimiento | No aplica |
 | Hosting, video, dominio y correos | Incluido en el mantenimiento |
 | Respaldos, seguridad y actualizaciones | Incluido en el mantenimiento |
 | Soporte y corrección de errores | Incluido en el mantenimiento |
@@ -150,7 +150,7 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | Forma de pago inicial | 50% al iniciar y 50% al entregar la plataforma |
 | Cálculo del mantenimiento | Sobre el monto cobrado al alumno |
 | Pago del mantenimiento | Mensual, los primeros 5 días de cada mes |
-| Mínimo mensual | Se cobra si el 15% del mes es menor a Q400 |
+| Mínimo mensual | No se cobra; el mantenimiento es el 20% de las ventas |
 | Duración mínima | 12 meses desde la entrega |
 | Terminación anticipada | Pago de Q6,000 |
 | Funciones nuevas | Se cotizan aparte |
