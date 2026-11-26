@@ -14,41 +14,44 @@
 | Correos | Resend |
 | Dominio, HTTPS y protección | Cloudflare |
 
-## Dónde alojar el video del curso
+## Video: opción que se presenta al cliente
 
-Investigado en noviembre de 2026. El caso es específico: videos de pago, acceso solo para alumnos inscritos, enlaces que vencen, marca de agua, grabación en MP4/H.264 y 5 a 15 minutos por lección. Eso descarta cualquier servicio que solo oculte el enlace.
+La opción propuesta para alojar las lecciones es **Bunny Stream**. Es la decisión que queda en el stack y la que se presenta al doctor.
 
-| Servicio | Precio orientativo | Protección | Encaje en Course Hub |
+### Por qué Bunny Stream
+
+- Codificación H.264 y reproductor incluidos sin costo adicional.
+- URLs firmadas con expiración, protección contra hotlink y marca de agua incluidas sin cargo. El correo del alumno puede mostrarse sobre el video.
+- Subida por API con TUS reanudable, pensada para archivos grandes de 1 a 2 horas.
+- El reproductor entrega HLS adaptativo: cada alumno recibe 720p o 1080p según su conexión.
+- 119 puntos de presencia y una API que permite revisar la inscripción en Fastify antes de entregar cada video.
+
+### Precios oficiales
+
+Consultados el 25 de noviembre de 2026. Todos los montos están en dólares.
+
+| Concepto | Bunny Stream | Cloudflare Stream | Mux |
 | --- | --- | --- | --- |
-| Bunny Stream | Desde $1/mes; almacenamiento desde $0.01/GB y entrega desde $0.005/GB; codificación gratis | URLs con token, bloqueo de hotlink y marca de agua incluidos; DRM de pago | El mejor encaje: plataforma propia, control de acceso desde Fastify y el costo más bajo por GB entregado |
-| Cloudflare Stream | $5/mes por cada 1,000 minutos almacenados (prepago) + $1 por cada 1,000 minutos entregados; codificación gratis | URLs firmadas y restricción de dominio | Alternativa sólida: ya usas Cloudflare para DNS/HTTPS y la factura es predecible por minutos, no por bitrate |
-| Mux | 100,000 minutos entregados gratis al mes; almacenamiento ~$0.003/min y entrega ~$0.001/min | URLs firmadas; DRM $100/mes + $0.003 por reproducción | Más caro y con extras costosos; solo tiene sentido si necesitas analítica de calidad de reproducción |
-| Vimeo | Desde ~$9/mes facturado anualmente | Restricción de dominio, sin anuncios | Cómodo para un creador, pero no encaja con una plataforma propia y los planes de negocio salen caros |
-| YouTube (no listado) | Gratis | Ninguna: cualquiera con el enlace puede verlo y compartirlo | Solo para videos promocionales, nunca para las lecciones de pago |
+| Codificación | Gratis | Gratis | Gratis en 1080p basic; Plus desde $0.03125/min |
+| Almacenamiento | Desde $0.01/GB al mes | $5/mes por bloque de 1,000 minutos | $0.003/min al mes |
+| Entrega | Desde $0.005/GB | $1 por cada 1,000 minutos | $0.001/min después de 100,000 min gratis al mes |
+| Mínimo o crédito | $1/mes | Bloque de $5/mes | $20 de crédito mensual en PAYG |
+| Seguridad incluida | Token, hotlink y marca de agua | URLs firmadas | URLs firmadas y restricción de dominio y referidor |
+| Página de precios | [bunny.net/pricing/stream](https://bunny.net/pricing/stream) | [developers.cloudflare.com/stream/pricing](https://developers.cloudflare.com/stream/pricing/) | [mux.com/pricing/video](https://www.mux.com/pricing/video) |
 
-### Comparación de costos
+### Estimado para el curso más largo
 
-Para una biblioteca de 20,000 minutos vista 200,000 minutos al mes, una comparativa publicada el 19 de noviembre de 2026 calculó aproximadamente $35/mes en Bunny Stream, $160 en Mux, $300 en Cloudflare Stream y $397 en api.video, usando las tarifas de cada proveedor.
+Supuestos: 5 horas (300 minutos) repartidas en 3 videos de 1 a 2 horas, H.264, 720p a ~4 Mbps y 1080p a ~8 Mbps, con ~10% de sobrecarga por contenedor y metadatos.
 
-El número de Bunny depende del bitrate porque cobra por GB, mientras que Cloudflare cobra por minuto y no penaliza la calidad. Con 720p/1080p y alumnos que ven las lecciones completas, Bunny suele salir más barato; con mucho tráfico y videos de alta calidad, la diferencia se reduce.
+| Resolución | Tamaño del curso | Almacenamiento Bunny | Entrega por alumno | 100 alumnos/mes | 500 alumnos/mes |
+| --- | --- | --- | --- | --- | --- |
+| 720p | ~10 GB | ~$0.10 | ~$0.05 | ~$5 | ~$25 |
+| 1080p | ~20 GB | ~$0.20 | ~$0.10 | ~$10 | ~$50 |
 
-### Decisión
+Las cifras de entrega usan la tarifa Volume de $0.005/GB. Con la tarifa Standard de $0.01/GB, que conviene para Latinoamérica por tener más puntos de presencia, el costo se duplica: ~$20/mes con 100 alumnos y ~$100/mes con 500 en 1080p. Cloudflare cobraría $30 y $150 en esos mismos casos, sin importar la resolución. Mux regala 100,000 minutos de entrega al mes: con 100 alumnos no cobraría entrega, pero no incluye marca de agua.
 
-Mantener **Bunny Stream**, como ya está en la propuesta.
+En cursos largos es normal que cada alumno vea entre 50% y 60% del video, así que la entrega real suele ser la mitad de estos valores. Son estimados a tarifa de lista: la factura depende de la región, el bitrate y el hábito de visualización.
 
-- Cumple lo que la propuesta promete: enlaces firmados que vencen, marca de agua visible y acceso revisado por inscripción.
-- Codificación estándar y reproductor incluidos sin costo adicional.
-- Es la opción más económica para una biblioteca que crece y se ve completa.
-- Cloudflare Stream queda como plan B si prefieres un solo proveedor y una factura en minutos. Es más predecible, pero en el ejemplo anterior cuesta unas 8 veces más.
-- YouTube queda reservado para contenido gratuito de atracción; Vimeo y Wistia para quien quiere una solución cerrada, no para este desarrollo.
-- El DRM completo de Bunny es un complemento de pago. Para el riesgo actual, los enlaces con token y la marca de agua son suficientes; si el cliente lo pide, se cotiza aparte.
+### Conclusión
 
-Revisar las tarifas antes de contratar, porque cambian.
-
-### Fuentes
-
-- [Bunny Stream — precios](https://bunny.net/pricing/stream)
-- [Cloudflare Stream — precios](https://developers.cloudflare.com/stream/pricing)
-- [Comparativa de precios de streaming 2026](https://www.aitoolbox.hk/articles/best-video-streaming-pricing-2026-mux-vs-cloudflare-stream-vs-bunny-stream-vs-apivideo/)
-- [Video hosting para cursos en línea, costos comparados](https://swarmify.com/blog/video-hosting-for-online-courses)
-- [Comparativa de plataformas de video](https://cloudinary.com/guides/video/best-video-hosting-platforms)
+Bunny Stream ofrece la calidad nítida buscada en 720p/1080p, incluye la protección que promete la propuesta y mantiene un costo estimado de ~$10/mes con 100 alumnos y ~$50/mes con 500 en 1080p, más el mínimo de $1. Es la opción a presentar. Las tarifas se revisan antes de contratar.
