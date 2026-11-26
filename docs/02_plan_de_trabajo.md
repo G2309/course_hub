@@ -57,7 +57,8 @@ No hay margen para imprevistos: cualquier cambio de alcance o demora del cliente
 - [ ] Los cuestionarios califican en el servidor y no envían respuestas correctas al navegador.
 - [ ] El progreso y las notas se guardan por alumno.
 - [ ] El cobro se confirma con QPayPro y la inscripción queda automática.
-- [ ] El certificado en PDF se genera al terminar el curso.
+- [ ] El certificado en PDF se genera al terminar el curso con la plantilla de Vitaris.
+- [ ] Las inscripciones corporativas crean cuentas para los empleados cuando la empresa paga la totalidad.
 - [ ] Los correos de bienvenida, recibo y recuperación llegan correctamente.
 - [ ] Hay respaldo diario de PostgreSQL y se probó una restauración.
 - [ ] El panel de administración permite subir videos, crear preguntas y ver alumnos y ventas.

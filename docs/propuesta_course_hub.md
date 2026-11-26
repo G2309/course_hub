@@ -1,4 +1,4 @@
-# Propuesta: plataforma de cursos en línea
+# Propuesta: Academia Vitaris
 
 ## Qué incluye la plataforma
 
@@ -9,12 +9,27 @@
 | Página del curso | Lista de lecciones en orden: videos y cuestionarios intercalados |
 | Cuestionarios | Preguntas de opción múltiple, calificación automática y nota mínima para avanzar |
 | Progreso del alumno | Lecciones completadas y notas de cada cuestionario |
-| Pagos en línea | Cobro con tarjeta en quetzales con QPayPro |
+| Pagos en línea | Cobro con tarjeta en quetzales con QPayPro Premium |
 | Inscripción manual | Para alumnos que pagan por depósito o transferencia |
+| Inscripción corporativa | La empresa paga la totalidad y se crean cuentas para sus empleados |
 | Panel de administración | Subir videos, crear cuestionarios y ver alumnos inscritos |
 | Certificado | Certificado en PDF al terminar el curso |
 | Correos automáticos | Bienvenida, recibo de pago y recuperación de contraseña |
 | Diseño para celular | Pensado primero para verse bien en el teléfono |
+
+## Identidad y configuración confirmada
+
+| Dato | Valor |
+| --- | --- |
+| Nombre de la plataforma | Academia Vitaris |
+| Correo de notificaciones y soporte | contacto@vitaris.com.gt |
+| Dominio | `.com` nuevo en Cloudflare Registrar, pagado por el doctor |
+| Pasarela de pago | QPayPro plan Premium, Q195/mes más comisión desde 3.5% + Q2.95 por transacción; la tarifa exacta se confirma en su cuenta |
+| Administrador | El doctor, con verificación en dos pasos |
+| Material de marca | Guía de marca, logo y muestra de certificado en `docs/assets/vitaris/` |
+| Colores del logo | Azul marino, turquesa y verde, según el material adjunto |
+| Certificado | Se toma como base la muestra `muestra-encabezado-B.pdf` |
+| Empresas | La empresa paga la totalidad y se crean cuentas para sus empleados; no se usan códigos individuales |
 
 ## Plan de trabajo y horas hombre
 
@@ -117,7 +132,7 @@ Bunny Stream es la opción presentada: mantiene 720p y 1080p nítidos, incluye e
 
 La suma de las 17 actividades es 180 horas en 8 semanas, con un promedio de 22.5 horas semanales. La semana 7 concentra 35 horas, así que se adelantarán de 6 a 8 horas de seguridad y pruebas a las semanas 4 a 6 sin cambiar el total.
 
-Las horas alcanzan para el alcance descrito si el cliente entrega videos y preguntas antes de la semana 3, aprueba el diseño en la semana 2, define los precios antes de la semana 5 y abre su cuenta de QPayPro antes de la semana 5. No hay margen para cambios de alcance: cualquier demora o ajuste adicional se reprograma. Si se desea un colchón, se pueden sumar unas 27 horas, un 15%.
+Las horas alcanzan para el alcance descrito si el cliente entrega videos y preguntas antes de la semana 3, aprueba el diseño en la semana 2, define los precios antes de la semana 5 y da acceso a su cuenta de QPayPro Premium antes de la semana 5. No hay margen para cambios de alcance: cualquier demora o ajuste adicional se reprograma. Si se desea un colchón, se pueden sumar unas 27 horas, un 15%.
 
 ### Pasos para integrar el video
 
@@ -166,7 +181,7 @@ Las horas alcanzan para el alcance descrito si el cliente entrega videos y pregu
 | --- | --- | --- |
 | Grabar los videos y crear las preguntas | Sí |  |
 | Definir el precio de cada curso | Sí |  |
-| Abrir y mantener la cuenta de QPayPro | Sí |  |
+| Mantener la cuenta de QPayPro Premium y dar acceso al modo de prueba | Sí |  |
 | Cargo de QPayPro por transacción | Sí |  |
 | Emitir factura electrónica (FEL) por cada venta | Sí |  |
 | Desarrollar y publicar la plataforma |  | Sí |
